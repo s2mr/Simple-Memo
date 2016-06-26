@@ -21,7 +21,12 @@ class AddViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func Input_Title(sender: UITextField) {
+    }
+    @IBOutlet weak var Input_text: UITextView!
 
+    @IBAction func Submit(sender: UIButton) {
+    }
     /*
     // MARK: - Navigation
 

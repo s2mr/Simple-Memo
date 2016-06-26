@@ -91,9 +91,35 @@
                     <view key="view" contentMode="scaleToFill" id="MYx-Up-SCv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="タイトルを入力してください。" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fni-GC-Ey6">
+                                <rect key="frame" x="20" y="44" width="335" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="Input_Title:" destination="Vbl-Kf-mb6" eventType="editingDidEnd" id="zTb-qT-b4a"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkw-kj-azQ">
+                                <rect key="frame" x="248" y="566" width="80" height="30"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="Submit:" destination="Vbl-Kf-mb6" eventType="touchUpInside" id="TD1-12-rBG"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="本文を入力してください。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="owq-dR-2w8">
+                                <rect key="frame" x="20" y="109" width="335" height="449"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="Input_text" destination="owq-dR-2w8" id="bse-aq-rZl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qxi-42-c0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
