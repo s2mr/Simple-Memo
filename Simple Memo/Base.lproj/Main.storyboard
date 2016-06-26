@@ -88,20 +88,42 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="EEI-Da-Xbf"/>
                                     <barButtonItem systemItem="add" id="dhL-hZ-xRU">
                                         <connections>
+                                            <action selector="add:" destination="vfD-ez-wKl" id="V7H-sp-OLU"/>
                                             <segue destination="Vbl-Kf-mb6" kind="show" id="Sgb-F0-OIk"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5P8-9j-NR1">
+                                <rect key="frame" x="0.0" y="108" width="375" height="510"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="yCL-32-r7B">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yCL-32-r7B" id="BvN-JG-BeC">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vfD-ez-wKl" id="WU4-Re-uNR"/>
+                                    <outlet property="delegate" destination="vfD-ez-wKl" id="pev-qB-jJF"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="メモ" id="NT6-HL-y2s"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="Memo_List" destination="5P8-9j-NR1" id="XKW-6g-dIg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWm-6U-XQv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-144" y="-201"/>
+            <point key="canvasLocation" x="-144.5" y="-201.5"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="rcN-YC-72i">
@@ -115,6 +137,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkw-kj-azQ">
+                                <rect key="frame" x="147" y="352" width="80" height="30"/>
+                                <state key="normal" title="保存"/>
+                                <connections>
+                                    <action selector="Submit:" destination="Vbl-Kf-mb6" eventType="touchUpInside" id="TD1-12-rBG"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" text="本文を入力してください。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="owq-dR-2w8">
+                                <rect key="frame" x="20" y="109" width="335" height="235"/>
+                                <color key="backgroundColor" red="0.97846902309070916" green="1" blue="0.91114056581580338" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="タイトルを入力してください。" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fni-GC-Ey6">
                                 <rect key="frame" x="20" y="44" width="335" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -123,19 +158,6 @@
                                     <action selector="Finish_title:" destination="Vbl-Kf-mb6" eventType="editingDidEnd" id="vwZ-aV-She"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkw-kj-azQ">
-                                <rect key="frame" x="248" y="566" width="80" height="30"/>
-                                <state key="normal" title="Submit"/>
-                                <connections>
-                                    <action selector="Submit:" destination="Vbl-Kf-mb6" eventType="touchUpInside" id="TD1-12-rBG"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="本文を入力してください。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="owq-dR-2w8">
-                                <rect key="frame" x="20" y="109" width="335" height="449"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
