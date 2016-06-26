@@ -27,12 +27,12 @@
                                     <navigationItem title="設定" id="FDN-vk-Qa8"/>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XbJ-Xb-bD7">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="XbJ-Xb-bD7">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="fuF-Cc-6jx">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="50" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fuF-Cc-6jx" id="uQl-OT-I9r">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -93,10 +93,10 @@
             </objects>
             <point key="canvasLocation" x="-561.5" y="561.5"/>
         </scene>
-        <!--View Controller-->
+        <!--From Setting View Controller-->
         <scene sceneID="GFd-KR-G4b">
             <objects>
-                <viewController id="QYe-B9-g3R" sceneMemberID="viewController">
+                <viewController id="QYe-B9-g3R" customClass="FromSettingViewController" customModule="Simple_Memo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EY5-4D-48l"/>
                         <viewControllerLayoutGuide type="bottom" id="btt-ZK-Zxa"/>

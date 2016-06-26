@@ -14,8 +14,6 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.backgroundColor = UIColor.blueColor()
-
         // Do any additional setup after loading the view.
     }
 
@@ -31,7 +29,7 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell")
         cell?.textLabel?.text = setting[indexPath.row]
-        cell?.textLabel?.font = UIFont(name: "Hiragino Sans", size: 30)
+        cell?.textLabel?.font = UIFont.systemFontOfSize(32, weight: UIFontWeightThin)
         return cell!
     }
 
@@ -47,6 +45,14 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 100.0
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "文字に関する設定を行うことができます。"
+    }
+    
+    func tableView(tableView: UITableView, sectionForSectionIndexTitle title: String, atIndex index: Int) -> Int {
+        return 1
     }
     
     /*
