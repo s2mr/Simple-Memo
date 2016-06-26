@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U0k-5e-xKr">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U0k-5e-xKr">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -26,8 +26,31 @@
                                     <navigationItem title="設定" id="FDN-vk-Qa8"/>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8lI-g9-3dO">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="9ko-01-2fg">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9ko-01-2fg" id="e6u-ol-xhe">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8lI-g9-3dO" firstAttribute="leading" secondItem="VXo-Ti-nLB" secondAttribute="leading" id="0BG-7W-nBe"/>
+                            <constraint firstItem="U0k-5e-xKr" firstAttribute="leading" secondItem="VXo-Ti-nLB" secondAttribute="leading" id="2cB-bw-ggm"/>
+                            <constraint firstItem="U0k-5e-xKr" firstAttribute="top" secondItem="3U9-cw-VFb" secondAttribute="bottom" id="7UQ-MM-p3F"/>
+                            <constraint firstAttribute="trailing" secondItem="8lI-g9-3dO" secondAttribute="trailing" id="I4d-nR-eVq"/>
+                            <constraint firstAttribute="trailing" secondItem="U0k-5e-xKr" secondAttribute="trailing" id="N12-S7-Hu2"/>
+                            <constraint firstItem="8lI-g9-3dO" firstAttribute="top" secondItem="U0k-5e-xKr" secondAttribute="bottom" id="gBV-AD-T3X"/>
+                            <constraint firstItem="ukF-Zi-O89" firstAttribute="top" secondItem="8lI-g9-3dO" secondAttribute="bottom" id="t3C-x6-4po"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="設定" id="ghd-Jv-E6R"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
