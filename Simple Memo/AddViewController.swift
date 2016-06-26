@@ -8,20 +8,29 @@
 
 import UIKit
 
-class AddViewController: UIViewController {
+class AddViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+    }
+    @IBAction func Finish_title(sender: UITextField) {
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func Input_finish(sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
+    }
     
+    @IBOutlet weak var Input_title: UITextField!
+    @IBOutlet weak var Input_text: UITextView!
 
+    @IBAction func Submit(sender: UIButton) {
+    }
     /*
     // MARK: - Navigation
 
