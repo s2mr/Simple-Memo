@@ -104,7 +104,39 @@
                     <view key="view" contentMode="scaleToFill" id="lVC-pM-cgV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="zKc-RZ-72N">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell1" id="JrJ-hq-jUW">
+                                        <rect key="frame" x="0.0" y="114" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JrJ-hq-jUW" id="U6B-7X-eP2">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="QYe-B9-g3R" id="IIi-Bf-Szy"/>
+                                    <outlet property="delegate" destination="QYe-B9-g3R" id="I9k-yC-Yy3"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zKc-RZ-72N" firstAttribute="leading" secondItem="lVC-pM-cgV" secondAttribute="leading" id="5Gu-Yf-4iB"/>
+                            <constraint firstAttribute="trailing" secondItem="zKc-RZ-72N" secondAttribute="trailing" id="CVz-0a-o6z"/>
+                            <constraint firstItem="btt-ZK-Zxa" firstAttribute="top" secondItem="zKc-RZ-72N" secondAttribute="bottom" id="Hco-TP-bJE"/>
+                            <constraint firstItem="zKc-RZ-72N" firstAttribute="top" secondItem="EY5-4D-48l" secondAttribute="bottom" id="gW5-Ix-Otb"/>
+                            <constraint firstItem="zKc-RZ-72N" firstAttribute="top" secondItem="lVC-pM-cgV" secondAttribute="top" id="l7P-g2-8rc"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="gW5-Ix-Otb"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>

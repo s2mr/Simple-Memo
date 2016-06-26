@@ -11,6 +11,7 @@ import UIKit
 class SettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let setting = ["フォント", "文字サイズ"]
+    var toDo = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +36,13 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == 0 {
+            toDo = "font"
             self.performSegueWithIdentifier("Row0", sender: self)
         }
         
         if indexPath.row == 1{
-        self.performSegueWithIdentifier("Row1", sender: self)
+            toDo = "size"
+        self.performSegueWithIdentifier("Row0", sender: self)
         }
     }
     
@@ -55,14 +58,15 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         return 1
     }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let vc = segue.destinationViewController as! FromSettingViewController
+        vc.toDo = toDo
     }
-    */
+    
 
 }
