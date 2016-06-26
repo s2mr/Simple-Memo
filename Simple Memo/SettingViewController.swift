@@ -14,6 +14,7 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.backgroundColor = UIColor.blueColor()
 
         // Do any additional setup after loading the view.
     }
@@ -30,9 +31,24 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell")
         cell?.textLabel?.text = setting[indexPath.row]
+        cell?.textLabel?.font = UIFont(name: "Hiragino Sans", size: 30)
         return cell!
     }
 
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == 0 {
+            self.performSegueWithIdentifier("Row0", sender: self)
+        }
+        
+        if indexPath.row == 1{
+        self.performSegueWithIdentifier("Row1", sender: self)
+        }
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 100.0
+    }
+    
     /*
     // MARK: - Navigation
 
