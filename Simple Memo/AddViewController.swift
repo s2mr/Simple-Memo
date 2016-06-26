@@ -17,6 +17,9 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     @IBAction func Finish_title(sender: UITextField) {
         
     }
+    @IBAction func Reverse(sender: UIScreenEdgePanGestureRecognizer) {
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -29,7 +32,8 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var Input_title: UITextField!
     @IBOutlet weak var Input_text: UITextView!
 
-    @IBAction func Submit(sender: UIButton) {
+    @IBAction func Submit(sender: AnyObject) {
+        
     }
     /*
     // MARK: - Navigation

@@ -62,7 +62,7 @@
         <!--メモ-->
         <scene sceneID="WXo-lt-tSe">
             <objects>
-                <viewController id="vfD-ez-wKl" customClass="MemoViewController" customModule="Simple_Memo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemoVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vfD-ez-wKl" customClass="MemoViewController" customModule="Simple_Memo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7gg-Eq-LxH"/>
                         <viewControllerLayoutGuide type="bottom" id="nTA-Yi-bU1"/>
@@ -141,7 +141,7 @@
                                 <rect key="frame" x="147" y="352" width="80" height="30"/>
                                 <state key="normal" title="保存"/>
                                 <connections>
-                                    <action selector="Submit:" destination="Vbl-Kf-mb6" eventType="touchUpInside" id="TD1-12-rBG"/>
+                                    <action selector="Submit:" destination="Vbl-Kf-mb6" eventType="touchUpInside" id="hs2-Ji-itT"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" text="本文を入力してください。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="owq-dR-2w8">
@@ -162,7 +162,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="Itq-f0-9uo" appends="YES" id="zfg-0Y-txc"/>
+                            <outletCollection property="gestureRecognizers" destination="as5-3K-nu4" appends="YES" id="psp-ea-95u"/>
+                            <outletCollection property="gestureRecognizers" destination="wR1-ZQ-cYz" appends="YES" id="1ET-Ca-auw"/>
                         </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -172,15 +173,47 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qxi-42-c0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="up" id="l8G-Bs-tiT"/>
-                <panGestureRecognizer id="HNR-ds-4YB"/>
-                <tapGestureRecognizer id="Itq-f0-9uo">
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="as5-3K-nu4">
                     <connections>
-                        <action selector="Input_finish:" destination="Vbl-Kf-mb6" id="bJk-eb-dfb"/>
+                        <action selector="Reverse:" destination="Vbl-Kf-mb6" id="m6h-kF-h5u"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
+                <tapGestureRecognizer id="wR1-ZQ-cYz">
+                    <connections>
+                        <action selector="Input_finish:" destination="Vbl-Kf-mb6" id="q8Y-uN-p1t"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="385.5" y="-201.5"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="fwX-hm-yb9">
+            <objects>
+                <tableViewController id="XCK-3s-AcN" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="052-PG-rZG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="WYE-JV-Wjg">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WYE-JV-Wjg" id="mHh-dQ-n0e">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="XCK-3s-AcN" id="Ket-iK-5hk"/>
+                            <outlet property="delegate" destination="XCK-3s-AcN" id="the-DM-XTO"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="RBA-Xp-7cN"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zXi-y9-Uza" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1739" y="161"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Tqp-Hb-72u">
