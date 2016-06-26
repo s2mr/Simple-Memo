@@ -14,6 +14,7 @@
 		20165A201D1F85FE00EA3DF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20165A1E1D1F85FE00EA3DF6 /* LaunchScreen.storyboard */; };
 		20165A281D1FD6A600EA3DF6 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20165A271D1FD6A600EA3DF6 /* SettingViewController.swift */; };
 		20165A2A1D1FD81700EA3DF6 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20165A291D1FD81700EA3DF6 /* AddViewController.swift */; };
+		20EB42251D20073B00788D66 /* FromSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EB42241D20073B00788D66 /* FromSettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		20165A211D1F85FE00EA3DF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20165A271D1FD6A600EA3DF6 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		20165A291D1FD81700EA3DF6 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		20EB42241D20073B00788D66 /* FromSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FromSettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				20165A211D1F85FE00EA3DF6 /* Info.plist */,
 				20165A271D1FD6A600EA3DF6 /* SettingViewController.swift */,
 				20165A291D1FD81700EA3DF6 /* AddViewController.swift */,
+				20EB42241D20073B00788D66 /* FromSettingViewController.swift */,
 			);
 			path = "Simple Memo";
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			files = (
 				20165A181D1F85FE00EA3DF6 /* MemoViewController.swift in Sources */,
 				20165A161D1F85FE00EA3DF6 /* AppDelegate.swift in Sources */,
+				20EB42251D20073B00788D66 /* FromSettingViewController.swift in Sources */,
 				20165A2A1D1FD81700EA3DF6 /* AddViewController.swift in Sources */,
 				20165A281D1FD6A600EA3DF6 /* SettingViewController.swift in Sources */,
 			);
