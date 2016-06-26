@@ -34,7 +34,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9ko-01-2fg" id="e6u-ol-xhe">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -120,7 +120,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="Input_Title:" destination="Vbl-Kf-mb6" eventType="editingDidEnd" id="zTb-qT-b4a"/>
+                                    <action selector="Finish_title:" destination="Vbl-Kf-mb6" eventType="editingDidEnd" id="vwZ-aV-She"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkw-kj-azQ">
@@ -138,13 +138,25 @@
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Itq-f0-9uo" appends="YES" id="zfg-0Y-txc"/>
+                        </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="Input_text" destination="owq-dR-2w8" id="bse-aq-rZl"/>
+                        <outlet property="Input_title" destination="fni-GC-Ey6" id="FqP-Z1-M4Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qxi-42-c0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" id="l8G-Bs-tiT"/>
+                <panGestureRecognizer id="HNR-ds-4YB"/>
+                <tapGestureRecognizer id="Itq-f0-9uo">
+                    <connections>
+                        <action selector="Input_finish:" destination="Vbl-Kf-mb6" id="bJk-eb-dfb"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="385.5" y="-201.5"/>
         </scene>
