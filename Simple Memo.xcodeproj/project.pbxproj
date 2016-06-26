@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		20165A161D1F85FE00EA3DF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20165A151D1F85FE00EA3DF6 /* AppDelegate.swift */; };
-		20165A181D1F85FE00EA3DF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20165A171D1F85FE00EA3DF6 /* ViewController.swift */; };
+		20165A181D1F85FE00EA3DF6 /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20165A171D1F85FE00EA3DF6 /* MemoViewController.swift */; };
 		20165A1B1D1F85FE00EA3DF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20165A191D1F85FE00EA3DF6 /* Main.storyboard */; };
 		20165A1D1D1F85FE00EA3DF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20165A1C1D1F85FE00EA3DF6 /* Assets.xcassets */; };
 		20165A201D1F85FE00EA3DF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20165A1E1D1F85FE00EA3DF6 /* LaunchScreen.storyboard */; };
+		20165A281D1FD6A600EA3DF6 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20165A271D1FD6A600EA3DF6 /* SettingViewController.swift */; };
+		20165A2A1D1FD81700EA3DF6 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20165A291D1FD81700EA3DF6 /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		20165A121D1F85FE00EA3DF6 /* Simple Memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Memo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20165A151D1F85FE00EA3DF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		20165A171D1F85FE00EA3DF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		20165A171D1F85FE00EA3DF6 /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
 		20165A1A1D1F85FE00EA3DF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		20165A1C1D1F85FE00EA3DF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20165A1F1D1F85FE00EA3DF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20165A211D1F85FE00EA3DF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20165A271D1FD6A600EA3DF6 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		20165A291D1FD81700EA3DF6 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +59,13 @@
 			isa = PBXGroup;
 			children = (
 				20165A151D1F85FE00EA3DF6 /* AppDelegate.swift */,
-				20165A171D1F85FE00EA3DF6 /* ViewController.swift */,
+				20165A171D1F85FE00EA3DF6 /* MemoViewController.swift */,
 				20165A191D1F85FE00EA3DF6 /* Main.storyboard */,
 				20165A1C1D1F85FE00EA3DF6 /* Assets.xcassets */,
 				20165A1E1D1F85FE00EA3DF6 /* LaunchScreen.storyboard */,
 				20165A211D1F85FE00EA3DF6 /* Info.plist */,
+				20165A271D1FD6A600EA3DF6 /* SettingViewController.swift */,
+				20165A291D1FD81700EA3DF6 /* AddViewController.swift */,
 			);
 			path = "Simple Memo";
 			sourceTree = "<group>";
@@ -135,8 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20165A181D1F85FE00EA3DF6 /* ViewController.swift in Sources */,
+				20165A181D1F85FE00EA3DF6 /* MemoViewController.swift in Sources */,
 				20165A161D1F85FE00EA3DF6 /* AppDelegate.swift in Sources */,
+				20165A2A1D1FD81700EA3DF6 /* AddViewController.swift in Sources */,
+				20165A281D1FD6A600EA3DF6 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +296,7 @@
 				20165A261D1F85FE00EA3DF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
