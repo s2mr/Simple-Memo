@@ -8,16 +8,11 @@
 
 import UIKit
 
-<<<<<<< HEAD
+
 class SettingViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
 
     var setting = ["フォント", "文字サイズ"]
-=======
-class SettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    let setting = ["フォント", "文字サイズ"]
     var toDo = ""
->>>>>>> add-setting
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +24,6 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
-<<<<<<< HEAD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell")
         cell?.textLabel?.text = setting[indexPath.row]
@@ -40,19 +34,6 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return setting.count
     }
-    
-=======
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return setting.count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell")
-        cell?.textLabel?.text = setting[indexPath.row]
-        cell?.textLabel?.font = UIFont.systemFontOfSize(32, weight: UIFontWeightThin)
-        return cell!
-    }
->>>>>>> add-setting
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == 0 {

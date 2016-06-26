@@ -12,10 +12,7 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     override func viewDidLoad() {
         super.viewDidLoad()
-<<<<<<< HEAD
-=======
         navigationController?.navigationBar.backgroundColor = UIColor.blueColor()
->>>>>>> add-setting
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -38,6 +35,12 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
         return UITableViewCellEditingStyle.Delete;
     }
+
+    //セルを選択した時に実行される
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("cellSegeu",sender: nil)
+    }
+
     //Deletボタンが押された時
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete{
@@ -47,7 +50,8 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     //ボタンが押されたらデータ追加
     @IBAction func add(sender: UIBarButtonItem) {
-        //dataArray.append(dataArray.count)
+        dataArray.append(dataArray.count)
+
         Memo_List.reloadData()
     }
     override func didReceiveMemoryWarning() {
