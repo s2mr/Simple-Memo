@@ -10,6 +10,7 @@ import UIKit
 
 class MemoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let ad = UIApplication.sharedApplication().delegate as! AppDelegate
+    var selectedRow = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.backgroundColor = UIColor.blueColor()
@@ -43,7 +44,8 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     //セルを選択した時に実行される
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("cellSegeu",sender: nil)
+        selectedRow = indexPath.row
+        performSegueWithIdentifier("editPath",sender: nil)
     }
 
     //Deletボタンが押された時
@@ -60,6 +62,14 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
         ad.dataList.append(String(ad.dataArray.count))
         Memo_List.reloadData()
 
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "editPath") {
+            let nextViewController: AddViewController = segue.destinationViewController as! AddViewController
+            nextViewController.param = selectedRow
+        }else{
+            print("nothing to do")
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
