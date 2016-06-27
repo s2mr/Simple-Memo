@@ -60,6 +60,7 @@
                     <navigationItem key="navigationItem" title="設定" id="iKO-mU-zLz"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="tableView" destination="8lI-g9-3dO" id="PcH-wt-LGg"/>
                         <segue destination="QYe-B9-g3R" kind="show" identifier="Row0" id="Nfy-n7-GPh"/>
                         <segue destination="11l-Td-v2x" kind="show" identifier="Row1" id="kfk-Uw-gpy"/>
                     </connections>
@@ -132,6 +133,9 @@
                         </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableView" destination="zKc-RZ-72N" id="31A-8e-sOR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WKd-Lf-A8K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -253,12 +257,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkw-kj-azQ">
-                                <state key="normal" title="保存"/>
-                                <connections>
-                                    <action selector="Submit:" destination="Vbl-Kf-mb6" eventType="touchUpInside" id="hs2-Ji-itT"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="タイトルを入力してください。" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fni-GC-Ey6">
                                 <rect key="frame" x="20" y="107" width="335" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -273,6 +271,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkw-kj-azQ">
+                                <rect key="frame" x="130" y="507" width="114" height="48"/>
+                                <state key="normal" title="保存"/>
+                                <connections>
+                                    <action selector="Submit:" destination="Vbl-Kf-mb6" eventType="touchUpInside" id="hs2-Ji-itT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -300,36 +305,6 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="518.5" y="-201.5"/>
-        </scene>
-        <!--Root View Controller-->
-        <scene sceneID="fwX-hm-yb9">
-            <objects>
-                <tableViewController id="XCK-3s-AcN" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="052-PG-rZG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="WYE-JV-Wjg">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WYE-JV-Wjg" id="mHh-dQ-n0e">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="XCK-3s-AcN" id="Ket-iK-5hk"/>
-                            <outlet property="delegate" destination="XCK-3s-AcN" id="the-DM-XTO"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="RBA-Xp-7cN"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zXi-y9-Uza" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1781.5" y="124.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Tqp-Hb-72u">

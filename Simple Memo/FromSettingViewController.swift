@@ -10,20 +10,29 @@ import UIKit
 
 class FromSettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    
     var toDo = ""
     let font = ["Helvetica", "Meilio", "Hiragino"]
     let size = ["12", "13", "14", "15", "16"]
+    
+    let ad = UIApplication.sharedApplication().delegate as! AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setting()
-
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.deselectRowAtIndexPath(tableView.indexPathForSelectedRow!, animated: true)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,8 +67,31 @@ class FromSettingViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//    tableView.indexPathForCell(UIT)
+        tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = UITableViewCellAccessoryType.Checkmark
+        if toDo == "font" {
+            ad.font = font[indexPath.row]
+        }else if toDo == "size"{
+            ad.size = size[indexPath.row]
+        }
+        ad.save()
     }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = UITableViewCellAccessoryType.None
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if toDo == "font" && ad.font == font[indexPath.row] {
+            cell.accessoryType = .Checkmark
+            let tv = tableView
+            tv.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: UITableViewScrollPosition.None)
+        }else if toDo == "size" && ad.size == size[indexPath.row] {
+            cell.accessoryType = .Checkmark
+            let tv = tableView
+            tv.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: UITableViewScrollPosition.None)
+        }
+    }
+
     
     func setting() {
         if toDo == "font" {

@@ -10,9 +10,12 @@ import UIKit
 
 class MemoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    let ad = UIApplication.sharedApplication().delegate as! AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.backgroundColor = UIColor.blueColor()
+        ad.load()
+//        navigationController?.navigationBar.backgroundColor = UIColor.blueColor()
         // Do any additional setup after loading the view, typically from a nib.
     }
 

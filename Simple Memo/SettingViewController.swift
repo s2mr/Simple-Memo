@@ -11,6 +11,9 @@ import UIKit
 
 class SettingViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    
     var setting = ["フォント", "文字サイズ"]
     var toDo = ""
     
@@ -22,6 +25,11 @@ class SettingViewController: UIViewController, UITableViewDelegate,UITableViewDa
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+//        tableView.deselectRowAtIndexPath(NSIndexPath, animated: <#T##Bool#>)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
