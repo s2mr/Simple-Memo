@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var font = ""
     var size = ""
+    var isOnce = false
+
     
     func load() {
         //データ読み込み
