@@ -14,7 +14,7 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Input_title.text = ""
+        //Input_title.text = ""
         // Do any additional setup after loading the view.
     }
     @IBAction func Finish_title(sender: UITextField) {
@@ -39,6 +39,7 @@ class AddViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func Submit(sender: AnyObject) {
         ad.dataArray.append(Input_title.text!)
+        ad.dataList.append(Input_text.text!)
     }
     
     // MARK: - Navigation

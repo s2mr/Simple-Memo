@@ -12,8 +12,9 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var dataArray:[String] = []
-
+    var dataList:[String] = []
     var window: UIWindow?
+    @IBOutlet weak var Input_text: UITextView!
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {

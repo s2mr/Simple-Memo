@@ -10,7 +10,6 @@ import UIKit
 
 class MemoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let ad = UIApplication.sharedApplication().delegate as! AppDelegate
-
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.backgroundColor = UIColor.blueColor()
@@ -26,14 +25,21 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return ad.dataArray.count
+        //return ad.dataList.count
     }
     //セルの内容を返す
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //再利用可能なセルを得る
         let cell: UITableViewCell = UITableViewCell(style:UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
+        //データをかんまで分割
+       // let arr = ad.dataList[indexPath.row].componentaSeparatedByString(",")
+        
+       // cell.textLabel?.text = arr[0]
+        //cell.detailTextLabel?.text = arr[1]
+       // return cell
         //セルに値を設定する
-        cell.textLabel?.text = "\(ad.dataArray[indexPath.row])"
-//        cell.detailTextLabel?.text = "Subtitle \(dataArray[indexPath.row])"
+        cell.textLabel?.text = "タイトル：\(ad.dataArray[indexPath.row])"
+        cell.detailTextLabel?.text = "本文： \(ad.dataList[indexPath.row])"
         return cell
     }
     //セル削除可能
@@ -57,6 +63,9 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func add(sender: UIBarButtonItem) {
         ad.dataArray.append(String(ad.dataArray.count))
         Memo_List.reloadData()
+        ad.dataList.append(String(ad.dataArray.count))
+        Memo_List.reloadData()
+
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
