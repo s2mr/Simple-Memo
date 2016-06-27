@@ -7,18 +7,19 @@
 //
 
 import UIKit
-
+import SpriteKit
 
 class SettingViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     
-    
     var setting = ["フォント", "文字サイズ"]
     var toDo = ""
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
 
@@ -66,6 +67,7 @@ class SettingViewController: UIViewController, UITableViewDelegate,UITableViewDa
     func tableView(tableView: UITableView, sectionForSectionIndexTitle title: String, atIndex index: Int) -> Int {
         return 1
     }
+    
     
     // MARK: - Navigation
 
