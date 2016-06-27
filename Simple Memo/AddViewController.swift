@@ -9,9 +9,12 @@
 import UIKit
 
 class AddViewController: UIViewController, UITextFieldDelegate {
-
+    
+    let ad = UIApplication.sharedApplication().delegate as! AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        Input_title.text = ""
         // Do any additional setup after loading the view.
     }
     @IBAction func Finish_title(sender: UITextField) {
@@ -33,9 +36,11 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var Input_title: UITextField!
     @IBOutlet weak var Input_text: UITextView!
 
+
     @IBAction func Submit(sender: AnyObject) {
+        ad.dataArray.append(Input_title.text!)
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -43,6 +48,6 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
