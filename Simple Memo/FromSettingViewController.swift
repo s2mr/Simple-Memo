@@ -14,7 +14,7 @@ class FromSettingViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     var toDo = ""
-    let font = ["Helvetica", "Meilio", "Hiragino"]
+    let font = ["Helvetica", "STHeltiTC-Light", "TimesNewRomanPS-BoldItalic"]
     let size = ["12", "13", "14", "15", "16"]
     
     let ad = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -32,7 +32,7 @@ class FromSettingViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.deselectRowAtIndexPath(tableView.indexPathForSelectedRow!, animated: true)
+//        tableView.deselectRowAtIndexPath(tableView.indexPathForSelectedRow!, animated: true)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

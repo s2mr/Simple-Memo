@@ -15,6 +15,7 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         ad.load()
+        Memo_List.rowHeight = 60
 //        navigationController?.navigationBar.backgroundColor = UIColor.blueColor()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -43,6 +44,18 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
         //セルに値を設定する
         cell.textLabel?.text = "タイトル：\(ad.dataArray[indexPath.row])"
         cell.detailTextLabel?.text = "本文： \(ad.dataList[indexPath.row])"
+        
+        if ad.font == "Helvetica" {
+            cell.textLabel?.font = UIFont(name: "Helvetica", size: 24)
+            cell.detailTextLabel?.font = UIFont(name: "Helvetica", size: 15)
+        } else if ad.font == "STHeltiTC-Light" {
+            cell.textLabel?.font = UIFont(name: "STHeltiTC-Light", size: 24)
+            cell.detailTextLabel?.font = UIFont(name: "STHeltiTC-Light", size: 15)
+        }else if ad.font == "TimesNewRomanPS-BoldItalic" {
+            cell.textLabel?.font = UIFont(name: "TimesNewRomanPS-BoldItalic", size: 18)
+            cell.detailTextLabel?.font = UIFont(name: "TimesNewRomanPS-BoldItalic", size: 10)
+        }
+        
         return cell
     }
     //セル削除可能
