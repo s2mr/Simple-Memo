@@ -15,23 +15,47 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         ad.load()
+        Memo_List.rowHeight = 60
 //        navigationController?.navigationBar.backgroundColor = UIColor.blueColor()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        Memo_List.reloadData()
+    }
 
     @IBOutlet weak var Memo_List: UITableView!
-    var dataArray:[Int] = []
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataArray.count
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return ad.dataArray.count
+        //return ad.dataList.count
     }
     //セルの内容を返す
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //再利用可能なセルを得る
         let cell: UITableViewCell = UITableViewCell(style:UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
+        //データをかんまで分割
+       // let arr = ad.dataList[indexPath.row].componentaSeparatedByString(",")
+        
+       // cell.textLabel?.text = arr[0]
+        //cell.detailTextLabel?.text = arr[1]
+       // return cell
         //セルに値を設定する
-        cell.textLabel?.text = "\(dataArray[indexPath.row])"
-//        cell.detailTextLabel?.text = "Subtitle \(dataArray[indexPath.row])"
+        cell.textLabel?.text = "タイトル：\(ad.dataArray[indexPath.row])"
+        cell.detailTextLabel?.text = "本文： \(ad.dataList[indexPath.row])"
+        
+        if ad.font == "Helvetica" {
+            cell.textLabel?.font = UIFont(name: "Helvetica", size: 24)
+            cell.detailTextLabel?.font = UIFont(name: "Helvetica", size: 15)
+        } else if ad.font == "STHeltiTC-Light" {
+            cell.textLabel?.font = UIFont(name: "STHeltiTC-Light", size: 24)
+            cell.detailTextLabel?.font = UIFont(name: "STHeltiTC-Light", size: 15)
+        }else if ad.font == "TimesNewRomanPS-BoldItalic" {
+            cell.textLabel?.font = UIFont(name: "TimesNewRomanPS-BoldItalic", size: 18)
+            cell.detailTextLabel?.font = UIFont(name: "TimesNewRomanPS-BoldItalic", size: 10)
+        }
+        
         return cell
     }
     //セル削除可能
@@ -47,15 +71,17 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
     //Deletボタンが押された時
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete{
-            dataArray.removeAtIndex(indexPath.row)
+            ad.dataArray.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
         }
     }
     //ボタンが押されたらデータ追加
     @IBAction func add(sender: UIBarButtonItem) {
-        dataArray.append(dataArray.count)
-
+        ad.dataArray.append(String(ad.dataArray.count))
         Memo_List.reloadData()
+        ad.dataList.append(String(ad.dataArray.count))
+        Memo_List.reloadData()
+
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -10,7 +10,9 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+    var dataArray:[String] = []
+    var dataList:[String] = []
     var window: UIWindow?
     
     var font = ""
@@ -41,7 +43,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ud.setObject(setting_size, forKey: "SIZE")
 
     }
-
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
