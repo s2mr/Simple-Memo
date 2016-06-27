@@ -9,6 +9,7 @@
 import UIKit
 
 class AddViewController: UIViewController, UITextFieldDelegate {
+    var param:Int!
     
     let ad = UIApplication.sharedApplication().delegate as! AppDelegate
     
@@ -16,6 +17,15 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         //Input_title.text = ""
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let _ = param {
+            Input_title.text = ad.dataArray[param]
+            Input_text.text = ad.dataList[param]
+        }
     }
     @IBAction func Finish_title(sender: UITextField) {
         
@@ -40,6 +50,9 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     @IBAction func Submit(sender: AnyObject) {
         ad.dataArray.append(Input_title.text!)
         ad.dataList.append(Input_text.text!)
+        
+        navigationController?.popViewControllerAnimated(true)
+
     }
     
     // MARK: - Navigation
