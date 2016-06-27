@@ -25,7 +25,7 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return ad.dataArray.count
-        //return ad.dataList.count
+        return ad.dataList.count
     }
     //セルの内容を返す
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
