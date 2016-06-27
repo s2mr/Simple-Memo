@@ -31,12 +31,6 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //再利用可能なセルを得る
         let cell: UITableViewCell = UITableViewCell(style:UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
-        //データをかんまで分割
-       // let arr = ad.dataList[indexPath.row].componentaSeparatedByString(",")
-        
-       // cell.textLabel?.text = arr[0]
-        //cell.detailTextLabel?.text = arr[1]
-       // return cell
         //セルに値を設定する
         cell.textLabel?.text = "タイトル：\(ad.dataArray[indexPath.row])"
         cell.detailTextLabel?.text = "本文： \(ad.dataList[indexPath.row])"
