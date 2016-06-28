@@ -272,6 +272,7 @@
                                 <state key="normal" title="保存"/>
                                 <connections>
                                     <action selector="Submit:" destination="Vbl-Kf-mb6" eventType="touchDown" id="WQ5-2w-pSK"/>
+                                    <segue destination="vfD-ez-wKl" kind="presentation" id="sj0-5N-Xd9"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" text="本文を入力してください。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="owq-dR-2w8">
@@ -338,6 +339,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="sj0-5N-Xd9"/>
         <segue reference="1pH-r4-88d"/>
     </inferredMetricsTieBreakers>
 </document>
