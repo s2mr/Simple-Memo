@@ -267,7 +267,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="Finish_title:" destination="Vbl-Kf-mb6" eventType="editingDidEnd" id="vwZ-aV-She"/>
+                                    <action selector="Submit:" destination="Vbl-Kf-mb6" eventType="touchDown" id="WQ5-2w-pSK"/>
+                                    <segue destination="vfD-ez-wKl" kind="presentation" id="sj0-5N-Xd9"/>
                                 </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" text="本文を入力してください。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="owq-dR-2w8">
@@ -337,6 +338,7 @@
         <image name="Settings-50" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="sj0-5N-Xd9"/>
         <segue reference="1pH-r4-88d"/>
     </inferredMetricsTieBreakers>
 </document>
