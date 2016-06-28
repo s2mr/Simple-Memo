@@ -31,10 +31,6 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         
     }
 
-    @IBAction func Reverse(sender: UIScreenEdgePanGestureRecognizer) {
-        self.navigationController?.popToRootViewControllerAnimated(true)
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -50,20 +46,9 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     @IBAction func Submit(sender: AnyObject) {
         ad.dataArray.append(Input_title.text!)
         ad.dataList.append(Input_text.text!)
-<<<<<<< HEAD
-<<<<<<< HEAD
-        let memoViewController: MemoViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MemoVC") as! MemoViewController
-        self.dismissViewControllerAnimated(true, completion: nil)
-=======
         
         navigationController?.popViewControllerAnimated(true)
 
->>>>>>> master
-=======
-        
-        navigationController?.popViewControllerAnimated(true)
-
->>>>>>> master
     }
     
     // MARK: - Navigation

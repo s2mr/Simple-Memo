@@ -17,11 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var font = ""
     var size = ""
-<<<<<<< HEAD
-=======
     var isOnce = false
 
->>>>>>> master
+    @IBOutlet weak var Input_title: UITextField!
+    @IBOutlet weak var Input_text: UITextView!
+
     
     func load() {
         //データ読み込み
