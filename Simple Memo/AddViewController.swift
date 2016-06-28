@@ -46,9 +46,9 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     @IBAction func Submit(sender: AnyObject) {
         ad.dataArray.append(Input_title.text!)
         ad.dataList.append(Input_text.text!)
+
         
         navigationController?.popViewControllerAnimated(true)
-
     }
     
     // MARK: - Navigation
