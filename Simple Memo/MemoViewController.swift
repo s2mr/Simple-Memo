@@ -15,15 +15,24 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
     var selectedRow = 0
     
     var skView:SKView!
+<<<<<<< HEAD
     var isOnce = false
+=======
+>>>>>>> master
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+<<<<<<< HEAD
         if isOnce != true {
             
             let _ = NSTimer.scheduledTimerWithTimeInterval(2.5, target: self, selector: #selector(MemoViewController.hide), userInfo: nil, repeats: false)
+=======
+
+        if !ad.isOnce {
+            let _ = NSTimer.scheduledTimerWithTimeInterval(1.5, target: self, selector: #selector(MemoViewController.hide), userInfo: nil, repeats: false)
+>>>>>>> master
             
             skView = self.view as! SKView
             
@@ -38,9 +47,16 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             self.tabBarController?.tabBar.hidden = true
             self.navigationController?.navigationBar.hidden = true
+<<<<<<< HEAD
             isOnce = true
         }else {
             self.view.willRemoveSubview(skView)
+=======
+            ad.isOnce = true
+        }else {
+
+            skView.hidden = true
+>>>>>>> master
         }
         
         ad.load()
@@ -136,7 +152,13 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
     func hide() {
         self.tabBarController?.tabBar.hidden = false
         self.navigationController?.navigationBar.hidden = false
+<<<<<<< HEAD
         self.view.sendSubviewToBack(skView)
+=======
+
+        skView.hidden = true
+
+>>>>>>> master
     }
 
 

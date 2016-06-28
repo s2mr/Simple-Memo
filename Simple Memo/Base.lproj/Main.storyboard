@@ -268,8 +268,12 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <action selector="Submit:" destination="Vbl-Kf-mb6" eventType="touchDown" id="WQ5-2w-pSK"/>
                                     <segue destination="vfD-ez-wKl" kind="presentation" id="sj0-5N-Xd9"/>
+=======
+                                    <action selector="Finish_title:" destination="Vbl-Kf-mb6" eventType="editingDidEnd" id="vwZ-aV-She"/>
+>>>>>>> master
 =======
                                     <action selector="Finish_title:" destination="Vbl-Kf-mb6" eventType="editingDidEnd" id="vwZ-aV-She"/>
 >>>>>>> master

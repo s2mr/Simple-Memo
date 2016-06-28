@@ -51,8 +51,14 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         ad.dataArray.append(Input_title.text!)
         ad.dataList.append(Input_text.text!)
 <<<<<<< HEAD
+<<<<<<< HEAD
         let memoViewController: MemoViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MemoVC") as! MemoViewController
         self.dismissViewControllerAnimated(true, completion: nil)
+=======
+        
+        navigationController?.popViewControllerAnimated(true)
+
+>>>>>>> master
 =======
         
         navigationController?.popViewControllerAnimated(true)
