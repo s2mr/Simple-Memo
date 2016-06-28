@@ -14,8 +14,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var dataArray:[String] = []
     var dataList:[String] = []
     var window: UIWindow?
-    @IBOutlet weak var Input_text: UITextView!
+    
+    var font = ""
+    var size = ""
+    
+    func load() {
+        //データ読み込み
+        let ud = NSUserDefaults()
+        let setting_font = ud.objectForKey("FONT")
+        let setting_size = ud.objectForKey("SIZE")
+        
+        if setting_font as? String != nil {
+            font = setting_font as! String
+        }
+        if setting_size as? String != nil {
+            size = setting_size as! String
+        }
+    }
+    
+    func save() {
+        // NSUserDefaults のインスタンス取得
+        let ud = NSUserDefaults.standardUserDefaults()
+        let setting_font = font
+        let setting_size = size
+        
+        // キーを指定してオブジェクトを保存
+        ud.setObject(setting_font, forKey: "FONT")
+        ud.setObject(setting_size, forKey: "SIZE")
 
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.

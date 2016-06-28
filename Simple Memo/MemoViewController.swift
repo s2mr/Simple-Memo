@@ -7,13 +7,45 @@
 //
 
 import UIKit
+import SpriteKit
 
 class MemoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
     let ad = UIApplication.sharedApplication().delegate as! AppDelegate
     var selectedRow = 0
+    
+    var skView:SKView!
+    var isOnce = false
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.backgroundColor = UIColor.blueColor()
+        
+        if isOnce != true {
+            
+            let _ = NSTimer.scheduledTimerWithTimeInterval(2.5, target: self, selector: #selector(MemoViewController.hide), userInfo: nil, repeats: false)
+            
+            skView = self.view as! SKView
+            
+            //上記より画面ぴったりサイズのフレームを生成する
+            let frame:CGRect = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
+            
+            //カスタマイズViewを生成
+            skView = SKView(frame: frame)
+            
+            //カスタマイズViewを追加
+            self.view.addSubview(skView)
+            
+            self.tabBarController?.tabBar.hidden = true
+            self.navigationController?.navigationBar.hidden = true
+            isOnce = true
+        }else {
+            self.view.willRemoveSubview(skView)
+        }
+        
+        ad.load()
+        Memo_List.rowHeight = 60
+//        navigationController?.navigationBar.backgroundColor = UIColor.blueColor()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -21,11 +53,17 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewWillAppear(animated)
         Memo_List.reloadData()
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        showParticle()
+    }
+    
+    
 
     @IBOutlet weak var Memo_List: UITableView!
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return ad.dataArray.count
         return ad.dataList.count
     }
     //セルの内容を返す
@@ -35,6 +73,18 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
         //セルに値を設定する
         cell.textLabel?.text = "タイトル：\(ad.dataArray[indexPath.row])"
         cell.detailTextLabel?.text = "本文： \(ad.dataList[indexPath.row])"
+        
+        if ad.font == "Helvetica" {
+            cell.textLabel?.font = UIFont(name: "Helvetica", size: 24)
+            cell.detailTextLabel?.font = UIFont(name: "Helvetica", size: 15)
+        } else if ad.font == "STHeltiTC-Light" {
+            cell.textLabel?.font = UIFont(name: "STHeltiTC-Light", size: 24)
+            cell.detailTextLabel?.font = UIFont(name: "STHeltiTC-Light", size: 15)
+        }else if ad.font == "TimesNewRomanPS-BoldItalic" {
+            cell.textLabel?.font = UIFont(name: "TimesNewRomanPS-BoldItalic", size: 18)
+            cell.detailTextLabel?.font = UIFont(name: "TimesNewRomanPS-BoldItalic", size: 10)
+        }
+        
         return cell
     }
     //セル削除可能
@@ -55,13 +105,20 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
         }
     }
+    
+    func showParticle() {
+        let scene = LightScene(size: skView.frame.size)
+        skView.ignoresSiblingOrder = true
+        scene.scaleMode = .AspectFill
+        skView.presentScene(scene)
+    }
+    
     //ボタンが押されたらデータ追加
     @IBAction func add(sender: UIBarButtonItem) {
         ad.dataArray.append(String(ad.dataArray.count))
         Memo_List.reloadData()
         ad.dataList.append(String(ad.dataArray.count))
         Memo_List.reloadData()
-
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "editPath") {
@@ -74,6 +131,12 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func hide() {
+        self.tabBarController?.tabBar.hidden = false
+        self.navigationController?.navigationBar.hidden = false
+        self.view.sendSubviewToBack(skView)
     }
 
 
