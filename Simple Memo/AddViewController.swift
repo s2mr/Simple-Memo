@@ -31,10 +31,6 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         
     }
 
-    @IBAction func Reverse(sender: UIScreenEdgePanGestureRecognizer) {
-        self.navigationController?.popToRootViewControllerAnimated(true)
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -50,9 +46,9 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     @IBAction func Submit(sender: AnyObject) {
         ad.dataArray.append(Input_title.text!)
         ad.dataList.append(Input_text.text!)
+
         
         navigationController?.popViewControllerAnimated(true)
-
     }
     
     // MARK: - Navigation
@@ -62,6 +58,7 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    
 
 }
+    
+

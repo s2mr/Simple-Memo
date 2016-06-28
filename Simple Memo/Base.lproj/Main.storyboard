@@ -180,7 +180,7 @@
                         <viewControllerLayoutGuide type="top" id="7gg-Eq-LxH"/>
                         <viewControllerLayoutGuide type="bottom" id="nTA-Yi-bU1"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="JtG-eE-xT9" customClass="SKView">
+                    <view key="view" contentMode="scaleToFill" id="JtG-eE-xT9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -216,7 +216,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Vbl-Kf-mb6" kind="push" identifier="editPath" id="1pH-r4-88d"/>
+                                            <segue destination="Vbl-Kf-mb6" kind="show" identifier="editPath" id="1pH-r4-88d"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -248,7 +248,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWm-6U-XQv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-144.5" y="-201.5"/>
+            <point key="canvasLocation" x="-43.5" y="-201.5"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="rcN-YC-72i">
@@ -287,11 +287,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="as5-3K-nu4" appends="YES" id="psp-ea-95u"/>
                             <outletCollection property="gestureRecognizers" destination="wR1-ZQ-cYz" appends="YES" id="1ET-Ca-auw"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="B34-Xu-Jmj"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="Input_text" destination="owq-dR-2w8" id="bse-aq-rZl"/>
@@ -299,18 +297,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qxi-42-c0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="as5-3K-nu4">
-                    <connections>
-                        <action selector="Reverse:" destination="Vbl-Kf-mb6" id="m6h-kF-h5u"/>
-                    </connections>
-                </screenEdgePanGestureRecognizer>
                 <tapGestureRecognizer id="wR1-ZQ-cYz">
                     <connections>
                         <action selector="Input_finish:" destination="Vbl-Kf-mb6" id="q8Y-uN-p1t"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="518.5" y="-201.5"/>
+            <point key="canvasLocation" x="575.5" y="-248.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Tqp-Hb-72u">
@@ -337,6 +330,6 @@
         <image name="Settings-50" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1pH-r4-88d"/>
+        <segue reference="Sgb-F0-OIk"/>
     </inferredMetricsTieBreakers>
 </document>

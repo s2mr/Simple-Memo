@@ -13,35 +13,9 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     let ad = UIApplication.sharedApplication().delegate as! AppDelegate
     var selectedRow = 0
-    
-    var skView:SKView!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        if !ad.isOnce {
-            let _ = NSTimer.scheduledTimerWithTimeInterval(1.5, target: self, selector: #selector(MemoViewController.hide), userInfo: nil, repeats: false)
-            
-            skView = self.view as! SKView
-            
-            //上記より画面ぴったりサイズのフレームを生成する
-            let frame:CGRect = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
-            
-            //カスタマイズViewを生成
-            skView = SKView(frame: frame)
-            
-            //カスタマイズViewを追加
-            self.view.addSubview(skView)
-            
-            self.tabBarController?.tabBar.hidden = true
-            self.navigationController?.navigationBar.hidden = true
-            ad.isOnce = true
-        }else {
-
-            skView.hidden = true
-        }
         
         ad.load()
         Memo_List.rowHeight = 60
@@ -54,16 +28,13 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
         Memo_List.reloadData()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        showParticle()
-    }
     
     
 
     @IBOutlet weak var Memo_List: UITableView!
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return ad.dataArray.count
         return ad.dataList.count
     }
     //セルの内容を返す
@@ -105,13 +76,7 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
         }
     }
-    
-    func showParticle() {
-        let scene = LightScene(size: skView.frame.size)
-        skView.ignoresSiblingOrder = true
-        scene.scaleMode = .AspectFill
-        skView.presentScene(scene)
-    }
+
     
     //ボタンが押されたらデータ追加
     @IBAction func add(sender: UIBarButtonItem) {
@@ -133,14 +98,6 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Dispose of any resources that can be recreated.
     }
     
-    func hide() {
-        self.tabBarController?.tabBar.hidden = false
-        self.navigationController?.navigationBar.hidden = false
-
-        skView.hidden = true
-
-    }
-
 
 }
 

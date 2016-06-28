@@ -19,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var size = ""
     var isOnce = false
 
+    @IBOutlet weak var Input_title: UITextField!
+    @IBOutlet weak var Input_text: UITextView!
+
     
     func load() {
         //データ読み込み
