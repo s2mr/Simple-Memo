@@ -11,12 +11,12 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    var dataArray:[String] = []
-    var dataList:[String] = []
+    var dataArray:[String] = ["Hey,hey"]
+    var dataList:[String] = ["テストだぜ"]
     var window: UIWindow?
     
     var font = ""
-    var size = ""
+    var size = "14"
     var isOnce = false
 
     @IBOutlet weak var Input_title: UITextField!

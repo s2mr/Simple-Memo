@@ -25,6 +25,7 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        print("reload")
         Memo_List.reloadData()
     }
     
@@ -35,8 +36,8 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return ad.dataArray.count
-        return ad.dataList.count
     }
+    
     //セルの内容を返す
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //再利用可能なセルを得る
@@ -45,16 +46,9 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.textLabel?.text = "タイトル：\(ad.dataArray[indexPath.row])"
         cell.detailTextLabel?.text = "本文： \(ad.dataList[indexPath.row])"
         
-        if ad.font == "Helvetica" {
-            cell.textLabel?.font = UIFont(name: "Helvetica", size: 24)
-            cell.detailTextLabel?.font = UIFont(name: "Helvetica", size: 15)
-        } else if ad.font == "STHeltiTC-Light" {
-            cell.textLabel?.font = UIFont(name: "STHeltiTC-Light", size: 24)
-            cell.detailTextLabel?.font = UIFont(name: "STHeltiTC-Light", size: 15)
-        }else if ad.font == "TimesNewRomanPS-BoldItalic" {
-            cell.textLabel?.font = UIFont(name: "TimesNewRomanPS-BoldItalic", size: 18)
-            cell.detailTextLabel?.font = UIFont(name: "TimesNewRomanPS-BoldItalic", size: 10)
-        }
+        //フォントに関する設定
+        cell.textLabel?.font = UIFont(name: ad.font, size: NSNumberFormatter().numberFromString(ad.size) as! CGFloat)
+        cell.detailTextLabel?.font =  UIFont(name: ad.font, size: NSNumberFormatter().numberFromString(ad.size) as! CGFloat - 5)
         
         return cell
     }

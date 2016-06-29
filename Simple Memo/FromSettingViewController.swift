@@ -14,8 +14,8 @@ class FromSettingViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     var toDo = ""
-    let font = ["Helvetica", "STHeltiTC-Light", "TimesNewRomanPS-BoldItalic"]
-    let size = ["12", "13", "14", "15", "16"]
+    let font = ["Helvetica", "Trebuchet-BoldItalic", "Thonburi-Bold", "HiraKakuProN-W3", "HiraMinProN-W6"]
+    let size = ["8","10","12", "14", "16", "18", "20", "22", "24", "26"]
     
     let ad = UIApplication.sharedApplication().delegate as! AppDelegate
 
@@ -37,9 +37,9 @@ class FromSettingViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if toDo == "font" {
-         return 3
+         return font.count
         }else {
-         return 5
+         return size.count
         }
     }
     
