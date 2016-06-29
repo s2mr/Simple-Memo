@@ -11,8 +11,8 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    var dataArray:[String] = ["Hey,hey"]
-    var dataList:[String] = ["テストだぜ"]
+    var dataArray:[String] = []
+    var dataList:[String] = []
     var window: UIWindow?
     
     var font = ""
