@@ -35,7 +35,6 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return ad.dataArray.count
-        return ad.dataList.count
     }
     //セルの内容を返す
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -55,6 +54,9 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.textLabel?.font = UIFont(name: "TimesNewRomanPS-BoldItalic", size: 18)
             cell.detailTextLabel?.font = UIFont(name: "TimesNewRomanPS-BoldItalic", size: 10)
         }
+        
+        cell.textLabel?.font = UIFont(name: ad.font, size: CGFloat(ad.size))
+        cell.detailTextLabel?.font = UIFont(name: ad.font, size: CGFloat(ad.size - 5))
         
         return cell
     }

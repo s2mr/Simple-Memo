@@ -15,7 +15,7 @@ class FromSettingViewController: UIViewController, UITableViewDelegate, UITableV
     
     var toDo = ""
     let font = ["Helvetica", "STHeltiTC-Light", "TimesNewRomanPS-BoldItalic"]
-    let size = ["12", "13", "14", "15", "16"]
+    let size = [12, 13, 14, 15, 16]
     
     let ad = UIApplication.sharedApplication().delegate as! AppDelegate
 
@@ -48,7 +48,7 @@ class FromSettingViewController: UIViewController, UITableViewDelegate, UITableV
         if toDo == "font" {
             cell?.textLabel?.text = font[indexPath.row]
         }else  if toDo == "size" {
-            cell?.textLabel?.text = size[indexPath.row]
+            cell?.textLabel?.text = size[indexPath.row].description
         }
         
         return cell!
