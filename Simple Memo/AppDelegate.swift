@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     var font = ""
-    var size:Int = 15
+
+    var size = "14"
+    
     var isOnce = false
 
     @IBOutlet weak var Input_title: UITextField!
