@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddViewController: UIViewController, UITextFieldDelegate {
+class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     var param:Int!
     
     let ad = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -47,8 +47,20 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         ad.dataArray.append(Input_title.text!)
         ad.dataList.append(Input_text.text!)
 
-        
         navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func textViewDidBeginEditing(textView: UITextView) {
+        if Input_text.text == "本文を入力してください。"{
+            Input_text.text = ""
+        }
+    }
+    
+    func textViewShouldEndEditing(textView: UITextView) -> Bool {
+        if Input_text.text == "" {
+            Input_text.text = "本文を入力してください。"
+        }
+        return true
     }
     
     // MARK: - Navigation

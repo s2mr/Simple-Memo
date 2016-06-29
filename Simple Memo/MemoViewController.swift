@@ -50,9 +50,6 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.textLabel?.font = UIFont(name: ad.font, size: NSNumberFormatter().numberFromString(ad.size) as! CGFloat)
         cell.detailTextLabel?.font =  UIFont(name: ad.font, size: NSNumberFormatter().numberFromString(ad.size) as! CGFloat - 5)
         
-        cell.textLabel?.font = UIFont(name: ad.font, size: CGFloat(ad.size))
-        cell.detailTextLabel?.font = UIFont(name: ad.font, size: CGFloat(ad.size - 5))
-        
         return cell
     }
     //セル削除可能

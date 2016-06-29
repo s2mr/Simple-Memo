@@ -34,8 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if setting_font as? String != nil {
             font = setting_font as! String
         }
-        if setting_size as? Int != nil {
-            size = setting_size as! Int
+        if setting_size as? String != nil {
+            size = setting_size as! String
         }
     }
     

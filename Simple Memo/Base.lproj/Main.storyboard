@@ -275,6 +275,9 @@
                                 <color key="backgroundColor" red="0.97846902309070916" green="1" blue="0.91114056581580338" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Vbl-Kf-mb6" id="VOz-x1-TMA"/>
+                                </connections>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkw-kj-azQ">
                                 <rect key="frame" x="130" y="507" width="114" height="48"/>
